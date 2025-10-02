@@ -1,21 +1,22 @@
-﻿/* =============== THEME =============== */
+﻿/* =============== THEME (ORANGE / YELLOW) =============== */
 :root {
-    --bg: #0f172a; /* page background (deep slate) */
-    --card: #0b1229; /* card base */
-    --ink: #e6eefc; /* primary text */
-    --muted: #a6b0c3; /* secondary text */
-    --brandA: #7c3aed; /* purple */
-    --brandB: #06b6d4; /* cyan */
-    --brandC: #f59e0b; /* amber */
-    --accent: #22c55e; /* green */
+    --bg: #0f1220; /* deep night base */
+    --card: #0c1022;
+    --ink: #fff8e6; /* warm white */
+    --muted: #f1d9a6; /* sand */
+    --brandA: #f59e0b; /* amber/orange */
+    --brandB: #facc15; /* yellow */
+    --brandC: #fb923c; /* tangerine */
+    --accent: #fde047; /* lemon */
     --glass: rgba(255,255,255,.06);
-    --ring: rgba(124,58,237,.35);
+    --ring: rgba(245,158,11,.4); /* amber ring */
 }
 
+/* Warm sunrise background */
 body {
     font-family: "Inter","Helvetica Neue",Helvetica,Arial,sans-serif;
     color: var(--ink);
-    background: radial-gradient(1200px 600px at -10% -10%, rgba(124,58,237,.22), transparent 60%), radial-gradient(1200px 600px at 120% 10%, rgba(6,182,212,.18), transparent 60%), linear-gradient(180deg, #0a0f25 0%, var(--bg) 100%);
+    background: radial-gradient(1200px 600px at -10% -10%, rgba(245,158,11,.20), transparent 60%), radial-gradient(1200px 600px at 120% 10%, rgba(250,204,21,.16), transparent 60%), linear-gradient(180deg, #0b0f1e 0%, var(--bg) 100%);
 }
 
 .navbar-inverse {
@@ -25,11 +26,12 @@ body {
 }
 
     .navbar-inverse .navbar-brand {
-        color: #fff !important;
+        color: #1b1b1b !important;
         font-weight: 700;
         letter-spacing: .5px;
         text-transform: uppercase;
         position: relative;
+        text-shadow: 0 1px 0 rgba(255,255,255,.35);
     }
 
         .navbar-inverse .navbar-brand::after {
@@ -50,13 +52,13 @@ body {
         }
 
 #showTimeBtn {
-    background: linear-gradient(90deg,var(--brandB),var(--brandA));
+    background: linear-gradient(90deg, var(--brandB), var(--brandA));
     border: 0;
-    color: #fff;
+    color: #1b1b1b;
     font-weight: 700;
     border-radius: 999px;
     padding: 8px 14px;
-    box-shadow: 0 6px 18px rgba(124,58,237,.35);
+    box-shadow: 0 6px 18px rgba(245,158,11,.35);
     transition: transform .15s ease, box-shadow .15s ease;
 }
 
@@ -65,23 +67,37 @@ body {
         box-shadow: 0 10px 24px var(--ring);
     }
 
+#luckyBtn {
+    background: linear-gradient(90deg, var(--brandC), var(--brandB));
+    border: 0;
+    color: #1b1b1b;
+    font-weight: 700;
+    border-radius: 999px;
+    box-shadow: 0 6px 18px rgba(251,146,60,.35);
+}
+
+    #luckyBtn:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 10px 24px rgba(251,146,60,.45);
+    }
+
+
 #facetPanel {
-   
-    background-image: url('https://plus.unsplash.com/premium_photo-1755097117493-7d33670c8f16?q=80&w=1092&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-    background-size: cover;
-    background-position: center;
-    min-height: 100vh;
+    background-image: url('https://plus.unsplash.com/premium_photo-1755097117493-7d33670c8f16?q=80&w=1600&auto=format&fit=crop');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+\    min-height: calc(100vh - 70px);
     padding: 18px 14px 32px;
     position: relative;
     color: #fff;
 }
 
     #facetPanel::before {
-      
-        content: "";
+\        content: "";
         position: absolute;
         inset: 0;
-        background: linear-gradient(180deg, rgba(5,8,18,.75) 0%, rgba(5,8,18,.55) 60%, rgba(5,8,18,.85) 100%);
+        background: linear-gradient(180deg, rgba(20,12,5,.78) 0%, rgba(20,12,5,.55) 60%, rgba(20,12,5,.82) 100%);
         pointer-events: none;
     }
 
@@ -101,19 +117,20 @@ body {
 
             #facetPanel .nav > li > div {
                 background: var(--glass);
-                border: 1px solid rgba(255,255,255,.08);
+                border: 1px solid rgba(255,255,255,.10);
                 border-radius: 14px;
                 padding: 10px 12px;
                 backdrop-filter: blur(6px);
-                box-shadow: 0 8px 24px rgba(0,0,0,.15);
+                box-shadow: 0 8px 24px rgba(0,0,0,.18);
             }
 
-   these styles ensure readability */
+    /* Readability for headers/labels */
     #facetPanel h4, #facetPanel label {
         color: #fff;
-        text-shadow: 0 1px 2px rgba(0,0,0,.5);
+        text-shadow: 0 1px 2px rgba(0,0,0,.55);
     }
 
+    /* Pretty inputs */
     #facetPanel input[type="checkbox"] {
         accent-color: var(--brandC);
         width: 16px;
@@ -123,8 +140,8 @@ body {
 
     #facetPanel input[type="number"],
     #facetPanel input[type="text"] {
-        background: rgba(255,255,255,.12);
-        border: 1px solid rgba(255,255,255,.2);
+        background: rgba(255,255,255,.14);
+        border: 1px solid rgba(255,255,255,.24);
         color: #fff;
         border-radius: 10px;
         padding: 6px 10px;
@@ -134,6 +151,7 @@ body {
         outline: 2px solid var(--ring);
     }
 
+/* Clear filters */
 #clearFilters .btn, #clearFilters button {
     background: linear-gradient(90deg,#ef4444,#f97316);
     border: 0;
@@ -143,6 +161,7 @@ body {
     font-weight: 700;
 }
 
+/* =============== RESULTS =============== */
 .results_section {
     padding-top: 10px;
 }
@@ -154,7 +173,7 @@ body {
 
 .searchResults__result {
     background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
-    border: 1px solid rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.10);
     border-radius: 18px;
     padding: 16px;
     margin: 14px 10px;
@@ -164,8 +183,8 @@ body {
 
     .searchResults__result:hover {
         transform: translateY(-3px);
-        border-color: rgba(124,58,237,.35);
-        box-shadow: 0 16px 36px rgba(124,58,237,.25);
+        border-color: rgba(245,158,11,.45);
+        box-shadow: 0 16px 36px rgba(245,158,11,.28);
     }
 
     .searchResults__result h4 {
@@ -198,26 +217,27 @@ body {
 
 #pager .pagination > li > a,
 #pager .pagination > li > span {
-    color: #fff;
-    background: rgba(255,255,255,.06);
-    border: 1px solid rgba(255,255,255,.12);
+    color: #1b1b1b;
+    background: linear-gradient(180deg, #ffe08a, #ffd166);
+    border: 1px solid rgba(0,0,0,.05);
 }
 
 #pager .pagination > .active > a {
     background: linear-gradient(90deg,var(--brandA),var(--brandB));
     border: 0;
+    color: #1b1b1b;
 }
 
 #searchBox input, #searchBox .form-control {
     border-radius: 999px !important;
     padding: 10px 16px;
-    background: rgba(255,255,255,.12);
-    border: 1px solid rgba(255,255,255,.18);
+    background: rgba(255,255,255,.14);
+    border: 1px solid rgba(255,255,255,.24);
     color: #fff;
 }
 
     #searchBox input::placeholder {
-        color: #d1d9ea;
+        color: #fff5cc;
     }
 
     #searchBox input:focus {
@@ -230,12 +250,12 @@ body {
     font-size: 22px;
     font-weight: 800;
     text-align: center;
-    color: #fff;
+    color: #1b1b1b;
     padding: 12px 16px;
     display: inline-block;
     border-radius: 12px;
-    background: linear-gradient(90deg,var(--brandC),var(--accent));
-    box-shadow: 0 10px 24px rgba(34,197,94,.25);
+    background: linear-gradient(90deg,var(--brandB),var(--accent));
+    box-shadow: 0 10px 24px rgba(253,224,71,.25);
 }
 
 .small-muted {
