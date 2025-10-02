@@ -87,7 +87,6 @@ body {
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat; 
-\    min-height: calc(100vh - 70px);
     padding: 18px 14px 32px;
     position: relative;
     color: #fff;
