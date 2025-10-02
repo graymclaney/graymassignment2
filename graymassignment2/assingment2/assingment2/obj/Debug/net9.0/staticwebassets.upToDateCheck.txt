@@ -1,6 +1,0 @@
-wwwroot\README.md
-wwwroot\base.html
-wwwroot\styles.css
-C:\Users\graym\source\repos\graymassignment2\assingment2\assingment2\wwwroot\README.md
-C:\Users\graym\source\repos\graymassignment2\assingment2\assingment2\wwwroot\styles.css
-C:\Users\graym\source\repos\graymassignment2\assingment2\assingment2\wwwroot\base.html
